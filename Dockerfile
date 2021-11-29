@@ -17,10 +17,12 @@ RUN cp config.sample.json config.json && \
 # Remove typescript
     npm uninstall -g typescript && \
 # Create epg.xml
-    touch epg.xml
+    touch epg.xml && \
+#Fix permission on docker-entrypoint.sh
+    chmod +x docker-entrypoint.sh
 
 EXPOSE 9999
-ENTRYPOINT ["sh", "/usr/src/app/docker-entrypoint.sh" ]
+ENTRYPOINT ["/usr/src/app/docker-entrypoint.sh" ]
 
 # Build docker image:
 #   sudo docker build -t digionline https://github.com/szabbenjamin/digionline.git
