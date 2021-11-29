@@ -8,12 +8,6 @@ COPY . .
 
 # Create config.json from the sample
 RUN cp config.sample.json config.json && \
-# Replace localhost domain with environment variable DOMAIN
-    sed -i 's/"domain": "localhost"/"domain": "'$DOMAIN'"/' config.json && \
-# Replace empty email with environment variable EMAIL
-    sed -i 's/"email": ""/"email": "'$EMAIL'"/' config.json && \
-# Replace empty email with environment variable PASSWORD
-    sed -i 's/"password": ""/"password": "'$PASSWORD'"/' config.json && \
 # Install production only dependencies
     npm install --only=production && \
 # Install typescript for conversion
