@@ -13,8 +13,6 @@ config.ts
 # Typescript specific
 *.js
 
-# Script files
-*.sh
 
 # Project specific
 log/
