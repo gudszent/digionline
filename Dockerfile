@@ -20,7 +20,7 @@ RUN cp config.sample.json config.json && \
     touch epg.xml
 
 EXPOSE 9999
-CMD [ /usr/src/app/docker-entrypoint.sh ]
+ENTRYPOINT ["sh", "/usr/src/app/docker-entrypoint.sh" ]
 
 # Build docker image:
 #   sudo docker build -t digionline https://github.com/szabbenjamin/digionline.git
