@@ -9,11 +9,11 @@ COPY . .
 # Create config.json from the sample
 RUN cp config.sample.json config.json && \
 # Replace localhost domain with environment variable DOMAIN
-    sed -i "s/domain: 'localhost'/domain: process.env.DOMAIN/" config.json && \
+    sed -i 's/"domain": "localhost"/"domain": process.env.DOMAIN/' config.json && \
 # Replace empty email with environment variable EMAIL
-    sed -i "s/email: ''/email: process.env.EMAIL/" config.json && \
+    sed -i 's/"email": ""/"email": process.env.EMAIL/' config.json && \
 # Replace empty email with environment variable PASSWORD
-    sed -i "s/password: ''/password: process.env.PASSWORD/" config.json && \
+    sed -i 's/"password": ""/"password": process.env.PASSWORD/' config.json && \
 # Install production only dependencies
     npm install --only=production && \
 # Install typescript for conversion
