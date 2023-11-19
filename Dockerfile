@@ -8,6 +8,9 @@ COPY . .
 
 # Create config.json from the sample
 RUN cp config.sample.json config.json && \
+# Install tz data for timezone
+    apk update && \
+    apk add --no-cache tzdata && \
 # Install production only dependencies
     npm install --only=production && \
 # Install typescript for conversion
