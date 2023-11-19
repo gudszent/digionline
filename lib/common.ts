@@ -66,7 +66,7 @@ class Common {
      * Téli-nyári időeltolódás igazítás
      */
     public static getStaticTimeZoneOffset() : number {
-        return (new Date().getTimezoneOffset() / 60)
+        return (new Date().getTimezoneOffset() / 60) * -1
     }
 
     public static getUrlVars(uri) {
